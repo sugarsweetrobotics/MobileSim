@@ -898,7 +898,7 @@ bool MapLoader::process(unsigned int maxTime)
   if (myProcessState == MapLoader::NEWMAP_CAIRNSTART)
   {
     DEBUG_LOG_STATE_ACTION();
-    myCairnObj_it = map->getMapObjects()->begin();
+    myCairnObj_it = map->getMapObjects().begin();
     myProcessState = MapLoader::NEWMAP_CAIRNCONT;
     DEBUG_LOG_NEW_STATE();
   }
@@ -911,7 +911,7 @@ bool MapLoader::process(unsigned int maxTime)
     // Create special objects for certain Cairn objects.
     // Reflector: make a line in the map with bright reflectance.
     // Sim.BoxObstacle: Make a box that the user can move.
-    for(; myCairnObj_it != map->getMapObjects()->end(); ++myCairnObj_it)
+    for(; myCairnObj_it != map->getMapObjects().end(); ++myCairnObj_it)
     {
 #if SINGLE_PROCESS_CAIRNOBJ
       if (!processTimeCheck(maxTime, mapProcessStart, MapLoader::NEWMAP_CAIRNCONT))

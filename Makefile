@@ -191,7 +191,7 @@ TAR_DIRECTORY:=MobileSim-$(VERSION)
 endif
 
 ifndef ARIA
-ARIA=/usr/local/Aria
+ARIA=/usr/local/
 endif
 
 #### Different options for Windows or Linux:
@@ -274,7 +274,7 @@ else #else assume Linux or Unix-like (e.g MacOSX):
 endif #host is MINGW32 or not
 
 LIBARIA:=$(ARIA)/lib/libAria.a
-ARIA_CFLAGS:=-I$(ARIA)/include 
+ARIA_CFLAGS:=-I$(ARIA)/include/Aria
 
 SOURCES:=\
 	main.cc \
